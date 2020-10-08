@@ -3,11 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PartyComponent } from './party/party.component';
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [
+      MsalGuard
+    ]
+  },
+  {
+    path: 'party',
+    component: PartyComponent,
     canActivate: [
       MsalGuard
     ]

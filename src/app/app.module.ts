@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { Configuration } from 'msal';
 import {
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PartyComponent } from './party/party.component';
 
 function MSALConfigFactory(): Configuration {
   return msalConfig;
@@ -37,6 +39,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     AppComponent,
     HomeComponent,
     ProfileComponent,
+    PartyComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
+    MatMenuModule,
     MatButtonModule,
     MatListModule,
     AppRoutingModule,

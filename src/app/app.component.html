@@ -1,8 +1,26 @@
 <mat-toolbar color="primary">
-  <a class="title" [routerLink]="['/']">{{ title }}</a>
+ <!--<a class="title" [routerLink]="['/']">{{ title }}</a>-->
 
-  <div class="toolbar-spacer"></div>
-  <button mat-raised-button *ngIf="loggedIn" (click)="editProfile()">Edit Profile</button>
+<button *ngIf="loggedIn" mat-button [matMenuTriggerFor]="menu">Opções</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="games">Games</button>
+  <button mat-menu-item [matMenuTriggerFor]="parties">Parties</button>
+</mat-menu>
+
+<mat-menu #games="matMenu">
+  <button mat-menu-item>Meus Jogos Criados</button>
+  <button mat-menu-item>Criar Novo Jogo</button>
+  <button mat-menu-item>Buscar Jogos</button>
+</mat-menu>
+
+<mat-menu #parties="matMenu">
+  <button mat-menu-item [routerLink]="['party']">Salas Criadas</button>
+  <button mat-menu-item>Criar Nova Sala</button>
+</mat-menu>
+
+
+<div class="toolbar-spacer"></div>
+  <button mat-raised-button *ngIf="loggedIn" (click)="editProfile()">Editar Perfil</button>
   <button mat-raised-button *ngIf="!loggedIn" (click)="login()">Login</button>
   <button mat-raised-button color="warn" *ngIf="loggedIn" (click)="logout()">Logout</button>
 </mat-toolbar>
