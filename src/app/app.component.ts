@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BroadcastService, MsalService} from '@azure/msal-angular';
 import { Logger, CryptoUtils } from 'msal';
-import { isIE, b2cPolicies } from './app-config';
+import { isIE, b2cPolicies, authparameters } from './app-config';
 
 @Component({
   selector: 'app-root',
@@ -94,5 +94,13 @@ export class AppComponent implements OnInit {
     } else {
       this.authService.loginPopup(b2cPolicies.authorities.editProfile);
     }
+  }
+
+  getToken() {
+    return this.authService.acquireTokenSilent(authparameters).then(
+      accessTokenResponse => {
+        return accessTokenResponse.accessToken;
+      }
+    );
   }
 }

@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Categoria :</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let category of categories" [value]="category.CategoryId">
+        {{category.CategoryName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>

@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 
 import { Configuration } from 'msal';
 import {
@@ -25,6 +26,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PartyComponent } from './party/party.component';
+import { CreateComponent } from './game/create/create.component';
+import { GameComponent } from './game/game.component';
 
 function MSALConfigFactory(): Configuration {
   return msalConfig;
@@ -40,6 +43,8 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     HomeComponent,
     ProfileComponent,
     PartyComponent,
+    CreateComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     MatMenuModule,
     MatButtonModule,
     MatListModule,
+    MatSelectModule,
     AppRoutingModule,
     MatCardModule,
     MsalModule

@@ -1,4 +1,4 @@
-import { Configuration } from 'msal';
+import { Configuration, AuthenticationParameters } from 'msal';
 import { MsalAngularConfiguration } from '@azure/msal-angular';
 
 // this checks if the app is running on IE
@@ -38,6 +38,17 @@ export const b2cPolicies = {
 }
 // #endregion
 
+export const authparameters : AuthenticationParameters =
+{
+    scopes : 
+    [
+        "https://FabricioDocemaB2C.onmicrosoft.com/chemquiz/read.demo",
+        "https://FabricioDocemaB2C.onmicrosoft.com/chemquiz/user_impersonation",
+        "https://FabricioDocemaB2C.onmicrosoft.com/chemquiz/read"
+    ],
+    authority : "https://FabricioDocemaB2C.b2clogin.com/tfp/FabricioDocemaB2C.onmicrosoft.com/B2C_1_signin"
+}
+
 
 // #region 2) Web API Configuration
 /** 
@@ -76,7 +87,6 @@ export const msalConfig: Configuration = {
         storeAuthStateInCookie: isIE, // Set this to "true" to save cache in cookies to address trusted zones limitations in IE
     },
 }
-
 /** 
  * Scopes you enter here will be consented once you authenticate. For a full list of available authentication parameters, 
  * visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html

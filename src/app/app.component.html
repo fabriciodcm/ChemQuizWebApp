@@ -9,7 +9,7 @@
 
 <mat-menu #games="matMenu">
   <button mat-menu-item>Meus Jogos Criados</button>
-  <button mat-menu-item>Criar Novo Jogo</button>
+  <button mat-menu-item [routerLink]="['game/create']">Criar Novo Jogo</button>
   <button mat-menu-item>Buscar Jogos</button>
 </mat-menu>
 
